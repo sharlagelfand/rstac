@@ -145,9 +145,9 @@ doc_item <- function(x, base_url = NULL) {
 
 doc_items <- function(x, base_url = NULL, query = NULL) {
   if (!is.list(x) || !"type" %in% names(x))
-    .error("Invalid Items object.")
-  if (x$type != "FeatureCollection")
-    .error("Invalid Items object. Type '%s' is not supported.", x$type)
+    # .error("Invalid Items object.")
+  # if (x$type != "FeatureCollection")
+    # .error("Invalid Items object. Type '%s' is not supported.", x$type)
   if (!"features" %in% names(x))
     .error("Invalid Items object. Expecting 'features' key.")
   x$features <- lapply(x$features, doc_item)
